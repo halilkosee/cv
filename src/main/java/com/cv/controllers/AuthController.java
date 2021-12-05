@@ -13,6 +13,7 @@ import com.cv.payload.request.LogOutRequest;
 import com.cv.payload.request.TokenRefreshRequest;
 import com.cv.payload.response.TokenRefreshResponse;
 import com.cv.security.services.RefreshTokenService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -41,6 +42,7 @@ import com.cv.security.services.UserDetailsImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
+@SecurityRequirement(name = "CVapi")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
